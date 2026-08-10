@@ -29,3 +29,9 @@ These guidelines dictate how AI agents (including Antigravity and any invoked su
 **Verify your work systematically.**
 - Always ensure the code is testable and actually runs.
 - Rely on verifiable success criteria rather than assuming it works.
+
+## 5. Language
+**ALL code must be written in English.**
+- This includes class names, variable names, function names, and inline code comments.
+- This is a strict requirement to ensure synchronization with the development team.
+- Communication with the user in the chat interface should remain in Vietnamese, but the codebase itself must be 100% English.
