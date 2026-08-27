@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://c4kh03aqsy0ma"]
+
+[ext_resource type="Theme" uid="uid://ccdsis5ml8q1e" path="res://ui/themes/main_theme.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://duso1xxu44yym" path="res://features/main_menu/main_menu.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://crlchdt3nffdf" path="res://assets/images/main_screen_button.PNG" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://byrk8sbkwttnd" path="res://assets/images/main_menu_background.png" id="4_tex"]
+[ext_resource type="Shader" uid="uid://d0y2s2a4wsh7t" path="res://ui/themes/blur_overlay.gdshader" id="5_shader"]
+[ext_resource type="Texture2D" uid="uid://b4pqf3yykt3pd" path="res://assets/images/logo_removebackground.png" id="6_tex"]
+[ext_resource type="Shader" uid="uid://bj0qygjqhpd7d" path="res://ui/themes/circular_blur_overlay.gdshader" id="7_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_circular_blur"]
+shader = ExtResource("7_shader")
+shader_parameter/blur_amount = 2.5
+shader_parameter/falloff = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
+shader = ExtResource("5_shader")
+shader_parameter/blur_amount = 1.5
+
+[node name="MainMenu" type="Control" unique_id=340541311]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1714376145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tex")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="TextureRect" parent="." unique_id=731832581]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 165.0
+offset_right = 237.0
+offset_bottom = 612.0
+grow_horizontal = 2
+texture = ExtResource("6_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DimBackground" type="ColorRect" parent="Title" unique_id=987261452]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_circular_blur")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -242.5
+offset_right = 246.1911
+offset_bottom = 209.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.874737, 0.874737, 0.874737, 0.4509804)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=283552887]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 100.0
+offset_right = 200.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 62
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=2131397722]
+custom_minimum_size = Vector2(236, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+flat = true
+
+[node name="Texture" type="TextureRect" parent="VBoxContainer/StartButton" unique_id=771145281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -136.0
+offset_right = 244.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DimBackground" type="ColorRect" parent="VBoxContainer/StartButton" unique_id=190828115]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_blur")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.75)
+
+[node name="Label" type="Label" parent="VBoxContainer/StartButton" unique_id=702306002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Bắt đầu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopButton" type="Button" parent="VBoxContainer" unique_id=2028335350]
+custom_minimum_size = Vector2(236, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+flat = true
+
+[node name="Texture" type="TextureRect" parent="VBoxContainer/ShopButton" unique_id=263800063]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -136.0
+offset_right = 244.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DimBackground" type="ColorRect" parent="VBoxContainer/ShopButton" unique_id=2067627643]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_blur")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.75)
+
+[node name="Label" type="Label" parent="VBoxContainer/ShopButton" unique_id=1190002635]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Cửa Hàng"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=200216888]
+custom_minimum_size = Vector2(236, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+flat = true
+
+[node name="Texture" type="TextureRect" parent="VBoxContainer/SettingsButton" unique_id=1806797866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -136.0
+offset_right = 244.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_tex")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DimBackground" type="ColorRect" parent="VBoxContainer/SettingsButton" unique_id=285919114]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_blur")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.75)
+
+[node name="Label" type="Label" parent="VBoxContainer/SettingsButton" unique_id=1758553905]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Cài đặt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VersionLabel" type="Label" parent="." unique_id=2048826525]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -69.0
+offset_right = -43.0
+offset_bottom = -29.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "v0.1.0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

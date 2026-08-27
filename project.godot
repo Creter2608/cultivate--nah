@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cultivate? Nah"
-run/main_scene="res://features/character/character_creation_ui.tscn"
+run/main_scene="res://features/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -33,12 +33,20 @@ settings/translation_fallback_enabled=true
 [display]
 
 window/size/viewport_width=720
-window/size/viewport_height=1280
+window/size/viewport_height=1600
+window/size/window_width_override=432
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[gui]
+
+theme/custom="res://ui/themes/main_theme.tres"
 
 [input]
 
@@ -60,3 +68,4 @@ dialogic_default_action={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

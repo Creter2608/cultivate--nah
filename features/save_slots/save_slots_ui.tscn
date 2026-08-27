@@ -1,0 +1,278 @@
+[gd_scene load_steps=2 format=3 uid="uid://df7wpeidks123"]
+
+[ext_resource type="Script" path="res://features/save_slots/save_slots_ui.gd" id="1_script"]
+
+[node name="SaveSlotsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12549, 0.12549, 0.12549, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "CHỌN LUÂN HỒI"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Slot1Btn" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Slot1Btn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Slot1Btn/VBoxContainer"]
+layout_mode = 2
+text = "Luân Hồi 1
+[ Tạo Mới ]"
+horizontal_alignment = 1
+
+[node name="DeleteBtn" type="Button" parent="VBoxContainer/Slot1Btn"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -30.0
+offset_right = -10.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9, 0.2, 0.2, 1)
+text = "Xóa"
+
+[node name="Slot2Btn" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+modulate = Color(0.5, 0.5, 0.5, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Slot2Btn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Slot2Btn/VBoxContainer"]
+layout_mode = 2
+text = "Luân Hồi 2
+[ Đã Khóa ]"
+horizontal_alignment = 1
+
+[node name="LockIcon" type="Label" parent="VBoxContainer/Slot2Btn"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -20.0
+offset_right = 60.0
+offset_bottom = 20.0
+grow_vertical = 2
+text = "🔒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeleteBtn" type="Button" parent="VBoxContainer/Slot2Btn"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -30.0
+offset_right = -10.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9, 0.2, 0.2, 1)
+text = "Xóa"
+
+[node name="BackBtn" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -120.0
+offset_right = 75.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Trở Về"
+
+[node name="ToastLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.84, 0, 1)
+text = "Toast Message"
+horizontal_alignment = 1
+
+[node name="CreatePopup" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Panel" type="Panel" parent="CreatePopup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -220.0
+offset_right = 220.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreatePopup/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CreatePopup/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Tạo Nhân Vật Mới"
+horizontal_alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="CreatePopup/Panel/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Nhập tên nhân vật..."
+alignment = 1
+max_length = 20
+
+[node name="ErrorLabel" type="Label" parent="CreatePopup/Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "Tên không được trống hoặc chứa ký tự đặc biệt!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GenderLabel" type="Label" parent="CreatePopup/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Giới Tính:"
+horizontal_alignment = 1
+
+[node name="GenderContainer" type="HBoxContainer" parent="CreatePopup/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MaleBtn" type="Button" parent="CreatePopup/Panel/VBoxContainer/GenderContainer"]
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "Nam"
+
+[node name="FemaleBtn" type="Button" parent="CreatePopup/Panel/VBoxContainer/GenderContainer"]
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+toggle_mode = true
+text = "Nữ"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreatePopup/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CancelBtn" type="Button" parent="CreatePopup/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Hủy"
+
+[node name="ConfirmBtn" type="Button" parent="CreatePopup/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Tiếp Tục"
+
+[connection signal="pressed" from="VBoxContainer/Slot1Btn" to="." method="_on_slot1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot1Btn/DeleteBtn" to="." method="_on_slot1_delete_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot2Btn" to="." method="_on_slot2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot2Btn/DeleteBtn" to="." method="_on_slot2_delete_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CreatePopup/Panel/VBoxContainer/GenderContainer/MaleBtn" to="." method="_on_male_btn_pressed"]
+[connection signal="pressed" from="CreatePopup/Panel/VBoxContainer/GenderContainer/FemaleBtn" to="." method="_on_female_btn_pressed"]
+[connection signal="pressed" from="CreatePopup/Panel/VBoxContainer/HBoxContainer/CancelBtn" to="." method="_on_popup_cancel_pressed"]
+[connection signal="pressed" from="CreatePopup/Panel/VBoxContainer/HBoxContainer/ConfirmBtn" to="." method="_on_popup_confirm_pressed"]

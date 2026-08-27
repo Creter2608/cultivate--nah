@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cycb5rmqhifks"]
 
 [ext_resource type="Script" uid="uid://b7hpi6shb2q81" path="res://features/character/character_creation_ui.gd" id="1_abcde"]
+[ext_resource type="Texture2D" uid="uid://bl5fjpseeblvx" path="res://assets/images/character_stats_roll_frame.png" id="2_frame"]
+[ext_resource type="Texture2D" uid="uid://cvdfft4odfcb5" path="res://assets/images/roll_button.png" id="3_roll_btn_tex"]
+[ext_resource type="Texture2D" uid="uid://bj3xo2fbd8ok7" path="res://assets/images/circle_frame.png" id="4_circle_frame"]
 
-[node name="CharacterCreationUI" type="Control" unique_id=1629663397]
+[node name="LblBackground" type="Control" unique_id=1629663397]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,92 +14,234 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_abcde")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=359164037]
+[node name="Background" type="TextureRect" parent="." unique_id=987123456]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_frame")
+expand_mode = 1
 
-[node name="ContentSplit" type="VBoxContainer" parent="VBoxContainer" unique_id=1674621473]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="LblRolls" type="Label" parent="." unique_id=307678930]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 208.0
+offset_top = 89.0
+offset_right = 585.0
+offset_bottom = 134.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Free Rolls: 5 | Ad Rolls: 3"
 
-[node name="PanelRight" type="PanelContainer" parent="VBoxContainer/ContentSplit" unique_id=1670739610]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ContentSplit/PanelRight" unique_id=990233734]
-layout_mode = 2
-
-[node name="LblStats" type="Label" parent="VBoxContainer/ContentSplit/PanelRight/VBoxContainer" unique_id=1915247723]
-layout_mode = 2
-text = "Stats"
-
-[node name="LblTraits" type="Label" parent="VBoxContainer/ContentSplit/PanelRight/VBoxContainer" unique_id=1363107966]
-layout_mode = 2
+[node name="LblTraits" type="Label" parent="." unique_id=1363107966]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 97.0
+offset_top = 520.0
+offset_right = 589.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Traits"
 autowrap_mode = 3
 
-[node name="LblBackground" type="Label" parent="VBoxContainer/ContentSplit/PanelRight/VBoxContainer" unique_id=2034691805]
-layout_mode = 2
+[node name="LblBackgroundInfo" type="Label" parent="." unique_id=2034691805]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 117.0
+offset_top = 993.0
+offset_right = 605.0
+offset_bottom = 1133.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Background"
 autowrap_mode = 3
 
-[node name="PanelLeft" type="PanelContainer" parent="VBoxContainer/ContentSplit" unique_id=1119738508]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="BtnRollAll" type="TextureButton" parent="." unique_id=883137870]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 369.0
+offset_top = 161.0
+offset_right = 569.0
+offset_bottom = 209.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ContentSplit/PanelLeft" unique_id=1881272842]
-layout_mode = 2
+[node name="LblPhysique" type="RichTextLabel" parent="." unique_id=401928374]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 237.0
+offset_right = 253.0
+offset_bottom = 295.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Thể phách: 1"
+scroll_active = false
 
-[node name="LblRolls" type="Label" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=307678930]
-layout_mode = 2
-text = "Rolls"
+[node name="BtnRollPhysique" type="TextureButton" parent="." unique_id=248121784]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 230.0
+offset_top = 229.0
+offset_right = 310.0
+offset_bottom = 274.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LblSpiritual" type="RichTextLabel" parent="." unique_id=501928375]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 312.0
+offset_right = 227.0
+offset_bottom = 370.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Linh lực: 1"
+scroll_active = false
+
+[node name="BtnRollSpiritual" type="TextureButton" parent="." unique_id=124811607]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 230.0
+offset_top = 304.0
+offset_right = 310.0
+offset_bottom = 349.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LblSoul" type="RichTextLabel" parent="." unique_id=601928376]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 387.0
+offset_right = 227.0
+offset_bottom = 445.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Hồn lực: 1"
+scroll_active = false
+
+[node name="BtnRollSoul" type="TextureButton" parent="." unique_id=465862320]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 230.0
+offset_top = 379.0
+offset_right = 310.0
+offset_bottom = 424.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LblFortune" type="RichTextLabel" parent="." unique_id=701928377]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 415.0
+offset_top = 237.0
+offset_right = 550.0
+offset_bottom = 295.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Khí vận: 1"
+scroll_active = false
+
+[node name="BtnRollFortune" type="TextureButton" parent="." unique_id=1944633275]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 543.0
+offset_top = 229.0
+offset_right = 623.0
+offset_bottom = 274.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LblAptitude" type="RichTextLabel" parent="." unique_id=801928378]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 415.0
+offset_top = 312.0
+offset_right = 550.0
+offset_bottom = 370.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Tư chất: 1"
+scroll_active = false
+
+[node name="BtnRollAptitude" type="TextureButton" parent="." unique_id=591076604]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 543.0
+offset_top = 304.0
+offset_right = 623.0
+offset_bottom = 349.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LblMystery" type="RichTextLabel" parent="." unique_id=901928379]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 0
+offset_left = 415.0
+offset_top = 387.0
+offset_right = 550.0
+offset_bottom = 445.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "???: 1"
+scroll_active = false
+
+[node name="BtnRollMystery" type="TextureButton" parent="." unique_id=325357078]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 543.0
+offset_top = 379.0
+offset_right = 623.0
+offset_bottom = 424.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnRollTraits" type="TextureButton" parent="." unique_id=15494221]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 440.0
+offset_top = 472.0
+offset_right = 584.0
+offset_bottom = 520.0
+texture_normal = ExtResource("3_roll_btn_tex")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnStart" type="TextureButton" parent="." unique_id=1578969662]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 310.0
+offset_top = 1353.0
+offset_right = 421.0
+offset_bottom = 1468.0
+texture_normal = ExtResource("4_circle_frame")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LblStartText" type="Label" parent="BtnStart" unique_id=199578844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "DỨT!"
 horizontal_alignment = 1
-
-[node name="BtnRollAll" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=883137870]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll All (Stats & Traits)"
-
-[node name="BtnRollPhysique" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=248121784]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Thể Phách"
-
-[node name="BtnRollSpiritual" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=124811607]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Linh Lực"
-
-[node name="BtnRollSoul" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=465862320]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Hồn Lực"
-
-[node name="BtnRollFortune" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=1944633275]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Khí Vận"
-
-[node name="BtnRollAptitude" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=591076604]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Tư Chất"
-
-[node name="BtnRollMystery" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=325357078]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Bí Ẩn"
-
-[node name="BtnRollTraits" type="Button" parent="VBoxContainer/ContentSplit/PanelLeft/VBoxContainer" unique_id=15494221]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Roll Mệnh Cách"
-
-[node name="BtnStart" type="Button" parent="VBoxContainer" unique_id=1578969662]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-text = "Bắt Đầu Đầu Thai (Start Game)"
+vertical_alignment = 1
